@@ -3,6 +3,8 @@
 A solo final project for `CS134 - Computer Game Design and Programming` at _San Jose State University_. This project is a 3-D game where a player
 controls a space lander in a Moon-like environment.
 
+![lander](https://github.com/VoChrisK/3D-Space-Lander/blob/master/assets/space-lander-intro.png)
+
 ## Languages/Technologies
 * C++
 * openFrameworks
@@ -14,9 +16,13 @@ controls a space lander in a Moon-like environment.
 The collision detection is handled through a data structure called an **Octree**. An Octree is a data structure where each node have
 exactly eight children. In a 3-D environment, Octrees are visualized through boxes, where each box represent a node in the tree.
 
-![octree](https://i.imgur.com/uYchObr.png)
+![octree](https://github.com/VoChrisK/3D-Space-Lander/blob/master/assets/octree-diagram.png)
 
+The Octree is used to determine intersecting points for the surface. The Octree subdivides until it finds a set of points that **only** contains the coordinates of the land and not empty spaces. As a result, the Octree merges with the surface. To check collision detection, the game continuously check whether the lander intersects these set of points. Here is a gif demonstrating how the Octree is used to detect collision with a mars surface (this gif was taken from a different project of mine, not from this project):
 
+<h1 align="center">
+  <img src="https://github.com/VoChrisK/3D-Space-Lander/blob/master/assets/octree-demonstration.gif" alt="gif-1" />
+</h1>
 
 **Here is how the Octree works:** Assume we have a mesh with a list of 3D points which can be indexed by i. Starting condition is that the entire mesh is in a bounding
 box (the smallest box containing all points). We then subdivide the box into 8 equally sized boxes. Each box represents a node and the node
@@ -147,3 +153,7 @@ and another for a view looking directly down at the surface.
 In addition, the player have access to the EasyCam camera. They are able to navigate anywhere they like over the surface. The camera can
 also retarget the view to a point or the lander.
 
+![camera 1](https://github.com/VoChrisK/3D-Space-Lander/blob/master/assets/lander-gif-1.gif)
+![camera 2](https://github.com/VoChrisK/3D-Space-Lander/blob/master/assets/lander-gif-2.gif)
+![camera 3](https://github.com/VoChrisK/3D-Space-Lander/blob/master/assets/lander-gif-3.gif)
+![camera 4](https://github.com/VoChrisK/3D-Space-Lander/blob/master/assets/lander-gif-4.gif)
